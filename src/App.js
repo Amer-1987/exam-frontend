@@ -1,6 +1,10 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Login from './components/Login';
+import Home from './components/Home';
+import FavFruit from './components/FavFruit';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,10 +24,14 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path="/">
+                { isAuthenticated && <Home/>}
+                { !isAuthenticated && <Login/>}
                 {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
               </Route>
               <Route exact path="/favFruit">
                 {/* TODO: if the user is logged in, render the `FavFruit` component, if they are not, render the `Login` component */}
+               { isAuthenticated && <FavFruit/>}
+              {  !isAuthenticated && <Login/>}
               </Route>
             </Switch>
             <Footer />

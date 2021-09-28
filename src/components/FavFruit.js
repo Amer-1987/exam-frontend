@@ -2,6 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class FavFruit extends React.Component {
+
+// componentDidMount(){
+
+// }
+
+
   render() {
     return(
       <>
